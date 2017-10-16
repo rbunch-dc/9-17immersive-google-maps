@@ -1,4 +1,8 @@
 body{
-	background-color: blue;
+	/* background-color: blue; */
 
+}
+
+#map{
+	height: 100vh;
 }
