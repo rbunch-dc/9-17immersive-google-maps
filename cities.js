@@ -13,6 +13,7 @@ function City(yearRank,city,state,yearEstimate,lastCensus,change,landArea,landAr
     this.lat = Number(latLonArray[0]);
     this.lon = Number(latLonArray[1]);
     this.latLon = latLon;
+    // this.image = ''
 }
 
 var cities = [];
