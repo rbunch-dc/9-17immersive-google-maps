@@ -1,11 +1,5 @@
-// $(document).ready(function(){
-// 	initMap();
-// })
-
-// console.log("sanity check");
-console.log(cities);
-// initMap is essentially our docuemnt.ready
-function initMap(){
+$(document).ready(function(){
+	var google = window.google;
 	console.log('map loaded');
 	// geographic center of the US
 	myLatlng = {
@@ -100,6 +94,6 @@ function initMap(){
 		markers.push(marker);
 	}
 
-};
+});
 
 
