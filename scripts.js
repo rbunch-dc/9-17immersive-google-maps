@@ -18,7 +18,25 @@ function initMap(){
 	// global infoWindow for everyone to share
 	var infoWindow = new google.maps.InfoWindow({});
 	// loop through the cities array which is in cities.js
+	var listHTML = '';
 	cities.map((city)=>{
+		createMarker(city);
+		listHTML += addCityToList(city);
+	});
+	$('#cities-table tbody').html(listHTML);
+
+
+	function addCityToList(city){
+		var newHTML = '<tr>';
+			newHTML += `<td class="city-name">${city.city}</td>`; 
+			newHTML += `<td class="city-state">${city.state}</td>`;
+			newHTML += `<td class="city-directions"><button class="btn btn-primary">Get Directions</button></td>`;
+			newHTML += `<td class="city-zoom"><button class="btn btn-success">Zoom to city</button></td>`;
+		newHTML += '</tr>'
+		return newHTML;			
+	}
+
+	function createMarker(city){
 		// console.log(city);
 		// set up an object with this cities lat/lon
 		var cityLL = {
@@ -48,8 +66,9 @@ function initMap(){
 			// 1. Map to open the infoWindow on
 			// 2. Where to put the infoWindow on teh map
 			infoWindow.open(map, marker);
-		})
-	});
+		})		
+	}
+
 };
 
 
